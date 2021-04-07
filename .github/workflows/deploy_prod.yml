@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: "./.aio-production"
+          target: "./.aio"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
